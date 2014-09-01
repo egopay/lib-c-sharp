@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EgoPayLib</name>
+    </assembly>
+    <members>
+        <member name="T:EgoPayLib.Api.Tests.EgoPayApiTestCaseAll">
+            <summary>
+            EgoPay .NET API DEVS Test Cases
+            </summary>
+        </member>
+        <member name="T:EgoPayLib.Api.Agents.EgoPayApiAgent">
+            <summary>
+            EgoPayApiAgent Interface
+            </summary>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetVersion">
+            <summary>
+            Returns api version
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.SetUrl(System.String)">
+            <summary>
+            Sets the agent http url
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetUrl">
+            <summary>
+            Returns the agent htttp url
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetBalance(System.String)">
+            <summary>
+            Api call returns user account balance
+            </summary>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetFindTransaction(System.String)">
+            <summary>
+            Api call returns search transaction details
+            </summary>
+            <param name="transactionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetTransfer(System.String,System.Double,System.String,System.String)">
+            <summary>
+            Api call returns transfered payment information
+            </summary>
+            <param name="payeeEmail"></param>
+            <param name="amount"></param>
+            <param name="currency"></param>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetHistory(System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Api call returns transacations history list
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetSoldSubscriptions(System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Api call returns sold subscriptions list
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetPurchasedSubscriptions(System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Api call returns purchased subscriptions list
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetSubscriptionTransactions(System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Api call returns provided subscription transactions
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.Agents.EgoPayApiAgent.GetCancelSubscription(System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Api call returns canceled subscription status
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EgoPayLib.EgoPayUtil">
+            <summary>
+            EgoPayUtil class
+            </summary>
+        </member>
+        <member name="M:EgoPayLib.EgoPayUtil.Uniqid(System.String,System.Boolean)">
+            <summary>
+            Unique Id generation implementation
+            </summary>
+            <param name="prefix"></param>
+            <param name="more_entropy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.EgoPayUtil.Time">
+            <summary>
+            Time implemetation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.EgoPayUtil.GetHashSha256(System.String)">
+            <summary>
+            Sha256 Hash implementation
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.EgoPayUtil.GetSciPaymentVerifyHash(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates Sci Payment verify hash
+            For Payments:
+            param fields must contain only 'amount', 'currency', 'cf_1', 'cf_2', 'cf_3', 'cf_4', 'cf_5', 'cf_6', 'cf_7', 'cf_8' keys that are sorted case sensitive
+            amount and currency fields are required and other fields is optional 
+            For Subscriptions:
+            param fields must contain only 'amount', 'currency', 'cf_1', 'cf_2', 'cf_3', 'cf_4', 'cf_5', 'cf_6', 'cf_7', 'cf_8' and 
+            'item_name', 'period_unit', 'period_length', 'period_iterations' keys that are sorted case sensitive, all cf_* fields are optional, other fields are required        
+            </summary>
+            <param name="storePass"></param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="F:EgoPayLib.Api.EgoPayAuth.accountName">
+            <summary>
+            Account Name
+            </summary>
+        </member>
+        <member name="F:EgoPayLib.Api.EgoPayAuth.apiId">
+            <summary>
+            API ID
+            </summary>
+        </member>
+        <member name="F:EgoPayLib.Api.EgoPayAuth.apiPass">
+            <summary>
+            API Password
+            </summary>
+        </member>
+        <member name="M:EgoPayLib.Api.EgoPayAuth.#ctor(System.String,System.String,System.String)">
+            <summary>
+            EgoPayAuth constructor accepting account name, api id and api password
+            </summary>
+            <param name="accountName"></param>
+            <param name="apiId"></param>
+            <param name="apiPass"></param>
+        </member>
+        <member name="M:EgoPayLib.Api.EgoPayAuth.ToString">
+            <summary>
+            Returns class attributes as string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:EgoPayLib.Api.EgoPayAuth.AccountName">
+            <summary>
+            Returns account name
+            </summary>
+        </member>
+        <member name="P:EgoPayLib.Api.EgoPayAuth.ApiId">
+            <summary>
+            Returns api id
+            </summary>
+        </member>
+        <member name="P:EgoPayLib.Api.EgoPayAuth.ApiPass">
+            <summary>
+            Returns api password
+            </summary>
+        </member>
+        <member name="T:EgoPayLib.Api.EgoPayRequest">
+            <summary>
+            EgoPayRequest class
+            </summary>
+        </member>
+        <member name="F:EgoPayLib.Api.EgoPayRequest.userAgent">
+            <summary>
+            EgoPay User Agent 
+            </summary>
+        </member>
+        <member name="M:EgoPayLib.Api.EgoPayRequest.HttpGetRequest(System.String)">
+            <summary>
+            Http get method request, returns response 
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EgoPayLib.Api.EgoPayRequest.HttpPostRequest(System.String,System.Collections.Generic.SortedDictionary{System.String,System.String})">
+            <summary>
+            Http post request, returns response
+            </summary>
+            <param name="url"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EgoPayLib.Api.EgoPayException">
+            <summary>
+            EgoPayException Class
+            </summary>
+        </member>
+    </members>
+</doc>
